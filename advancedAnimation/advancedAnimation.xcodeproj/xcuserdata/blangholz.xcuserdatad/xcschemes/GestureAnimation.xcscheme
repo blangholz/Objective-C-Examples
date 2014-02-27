@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4AD9F26B18BE6F9A0019EC9E"
-               BuildableName = "GestureAnimation.app"
-               BlueprintName = "GestureAnimation"
-               ReferencedContainer = "container:GestureAnimation.xcodeproj">
+               BuildableName = "advancedAnimation.app"
+               BlueprintName = "advancedAnimation"
+               ReferencedContainer = "container:advancedAnimation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4AD9F28618BE6F9A0019EC9E"
-               BuildableName = "GestureAnimationTests.xctest"
-               BlueprintName = "GestureAnimationTests"
-               ReferencedContainer = "container:GestureAnimation.xcodeproj">
+               BuildableName = "advancedAnimationTests.xctest"
+               BlueprintName = "advancedAnimationTests"
+               ReferencedContainer = "container:advancedAnimation.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4AD9F26B18BE6F9A0019EC9E"
-            BuildableName = "GestureAnimation.app"
-            BlueprintName = "GestureAnimation"
-            ReferencedContainer = "container:GestureAnimation.xcodeproj">
+            BuildableName = "advancedAnimation.app"
+            BlueprintName = "advancedAnimation"
+            ReferencedContainer = "container:advancedAnimation.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4AD9F26B18BE6F9A0019EC9E"
-            BuildableName = "GestureAnimation.app"
-            BlueprintName = "GestureAnimation"
-            ReferencedContainer = "container:GestureAnimation.xcodeproj">
+            BuildableName = "advancedAnimation.app"
+            BlueprintName = "advancedAnimation"
+            ReferencedContainer = "container:advancedAnimation.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4AD9F26B18BE6F9A0019EC9E"
-            BuildableName = "GestureAnimation.app"
-            BlueprintName = "GestureAnimation"
-            ReferencedContainer = "container:GestureAnimation.xcodeproj">
+            BuildableName = "advancedAnimation.app"
+            BlueprintName = "advancedAnimation"
+            ReferencedContainer = "container:advancedAnimation.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -41,20 +41,20 @@
 		4A36423E18BFAE72009D6CDF /* doubleTapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doubleTapViewController.h; sourceTree = "<group>"; };
 		4A36423F18BFAE72009D6CDF /* doubleTapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = doubleTapViewController.m; sourceTree = "<group>"; };
 		4A36424018BFAE72009D6CDF /* doubleTapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = doubleTapViewController.xib; sourceTree = "<group>"; };
-		4AD9F26C18BE6F9A0019EC9E /* GestureAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GestureAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AD9F26C18BE6F9A0019EC9E /* advancedAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = advancedAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AD9F26F18BE6F9A0019EC9E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4AD9F27118BE6F9A0019EC9E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4AD9F27318BE6F9A0019EC9E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		4AD9F27718BE6F9A0019EC9E /* GestureAnimation-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GestureAnimation-Info.plist"; sourceTree = "<group>"; };
+		4AD9F27718BE6F9A0019EC9E /* advancedAnimation-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "advancedAnimation-Info.plist"; sourceTree = "<group>"; };
 		4AD9F27918BE6F9A0019EC9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4AD9F27B18BE6F9A0019EC9E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4AD9F27D18BE6F9A0019EC9E /* GestureAnimation-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GestureAnimation-Prefix.pch"; sourceTree = "<group>"; };
+		4AD9F27D18BE6F9A0019EC9E /* advancedAnimation-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "advancedAnimation-Prefix.pch"; sourceTree = "<group>"; };
 		4AD9F27E18BE6F9A0019EC9E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4AD9F27F18BE6F9A0019EC9E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4AD9F28118BE6F9A0019EC9E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4AD9F28718BE6F9A0019EC9E /* GestureAnimationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GestureAnimationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AD9F28718BE6F9A0019EC9E /* advancedAnimationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = advancedAnimationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AD9F28818BE6F9A0019EC9E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		4AD9F29018BE6F9A0019EC9E /* GestureAnimationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GestureAnimationTests-Info.plist"; sourceTree = "<group>"; };
+		4AD9F29018BE6F9A0019EC9E /* advancedAnimationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "advancedAnimationTests-Info.plist"; sourceTree = "<group>"; };
 		4AD9F29218BE6F9A0019EC9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4AD9F29418BE6F9A0019EC9E /* GestureAnimationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GestureAnimationTests.m; sourceTree = "<group>"; };
 		4AD9F2A318BE71B00019EC9E /* easingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = easingViewController.h; sourceTree = "<group>"; };
@@ -92,8 +92,8 @@
 		4AD9F26318BE6F9A0019EC9E = {
 			isa = PBXGroup;
 			children = (
-				4AD9F27518BE6F9A0019EC9E /* GestureAnimation */,
-				4AD9F28E18BE6F9A0019EC9E /* GestureAnimationTests */,
+				4AD9F27518BE6F9A0019EC9E /* advancedAnimation */,
+				4AD9F28E18BE6F9A0019EC9E /* advancedAnimationTests */,
 				4AD9F26E18BE6F9A0019EC9E /* Frameworks */,
 				4AD9F26D18BE6F9A0019EC9E /* Products */,
 			);
@@ -102,8 +102,8 @@
 		4AD9F26D18BE6F9A0019EC9E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4AD9F26C18BE6F9A0019EC9E /* GestureAnimation.app */,
-				4AD9F28718BE6F9A0019EC9E /* GestureAnimationTests.xctest */,
+				4AD9F26C18BE6F9A0019EC9E /* advancedAnimation.app */,
+				4AD9F28718BE6F9A0019EC9E /* advancedAnimationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,7 +119,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4AD9F27518BE6F9A0019EC9E /* GestureAnimation */ = {
+		4AD9F27518BE6F9A0019EC9E /* advancedAnimation */ = {
 			isa = PBXGroup;
 			children = (
 				4AD9F27E18BE6F9A0019EC9E /* AppDelegate.h */,
@@ -128,33 +128,35 @@
 				4AD9F27618BE6F9A0019EC9E /* Supporting Files */,
 				4AD9F2AD18BEDCE20019EC9E /* View Controller */,
 			);
+			name = advancedAnimation;
 			path = GestureAnimation;
 			sourceTree = "<group>";
 		};
 		4AD9F27618BE6F9A0019EC9E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4AD9F27718BE6F9A0019EC9E /* GestureAnimation-Info.plist */,
+				4AD9F27718BE6F9A0019EC9E /* advancedAnimation-Info.plist */,
 				4AD9F27818BE6F9A0019EC9E /* InfoPlist.strings */,
 				4AD9F27B18BE6F9A0019EC9E /* main.m */,
-				4AD9F27D18BE6F9A0019EC9E /* GestureAnimation-Prefix.pch */,
+				4AD9F27D18BE6F9A0019EC9E /* advancedAnimation-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4AD9F28E18BE6F9A0019EC9E /* GestureAnimationTests */ = {
+		4AD9F28E18BE6F9A0019EC9E /* advancedAnimationTests */ = {
 			isa = PBXGroup;
 			children = (
 				4AD9F29418BE6F9A0019EC9E /* GestureAnimationTests.m */,
 				4AD9F28F18BE6F9A0019EC9E /* Supporting Files */,
 			);
+			name = advancedAnimationTests;
 			path = GestureAnimationTests;
 			sourceTree = "<group>";
 		};
 		4AD9F28F18BE6F9A0019EC9E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4AD9F29018BE6F9A0019EC9E /* GestureAnimationTests-Info.plist */,
+				4AD9F29018BE6F9A0019EC9E /* advancedAnimationTests-Info.plist */,
 				4AD9F29118BE6F9A0019EC9E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -179,9 +181,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4AD9F26B18BE6F9A0019EC9E /* GestureAnimation */ = {
+		4AD9F26B18BE6F9A0019EC9E /* advancedAnimation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4AD9F29818BE6F9A0019EC9E /* Build configuration list for PBXNativeTarget "GestureAnimation" */;
+			buildConfigurationList = 4AD9F29818BE6F9A0019EC9E /* Build configuration list for PBXNativeTarget "advancedAnimation" */;
 			buildPhases = (
 				4AD9F26818BE6F9A0019EC9E /* Sources */,
 				4AD9F26918BE6F9A0019EC9E /* Frameworks */,
@@ -191,14 +193,14 @@
 			);
 			dependencies = (
 			);
-			name = GestureAnimation;
+			name = advancedAnimation;
 			productName = GestureAnimation;
-			productReference = 4AD9F26C18BE6F9A0019EC9E /* GestureAnimation.app */;
+			productReference = 4AD9F26C18BE6F9A0019EC9E /* advancedAnimation.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4AD9F28618BE6F9A0019EC9E /* GestureAnimationTests */ = {
+		4AD9F28618BE6F9A0019EC9E /* advancedAnimationTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4AD9F29B18BE6F9A0019EC9E /* Build configuration list for PBXNativeTarget "GestureAnimationTests" */;
+			buildConfigurationList = 4AD9F29B18BE6F9A0019EC9E /* Build configuration list for PBXNativeTarget "advancedAnimationTests" */;
 			buildPhases = (
 				4AD9F28318BE6F9A0019EC9E /* Sources */,
 				4AD9F28418BE6F9A0019EC9E /* Frameworks */,
@@ -209,9 +211,9 @@
 			dependencies = (
 				4AD9F28D18BE6F9A0019EC9E /* PBXTargetDependency */,
 			);
-			name = GestureAnimationTests;
+			name = advancedAnimationTests;
 			productName = GestureAnimationTests;
-			productReference = 4AD9F28718BE6F9A0019EC9E /* GestureAnimationTests.xctest */;
+			productReference = 4AD9F28718BE6F9A0019EC9E /* advancedAnimationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -228,7 +230,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4AD9F26718BE6F9A0019EC9E /* Build configuration list for PBXProject "GestureAnimation" */;
+			buildConfigurationList = 4AD9F26718BE6F9A0019EC9E /* Build configuration list for PBXProject "advancedAnimation" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -240,8 +242,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4AD9F26B18BE6F9A0019EC9E /* GestureAnimation */,
-				4AD9F28618BE6F9A0019EC9E /* GestureAnimationTests */,
+				4AD9F26B18BE6F9A0019EC9E /* advancedAnimation */,
+				4AD9F28618BE6F9A0019EC9E /* advancedAnimationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -295,7 +297,7 @@
 /* Begin PBXTargetDependency section */
 		4AD9F28D18BE6F9A0019EC9E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4AD9F26B18BE6F9A0019EC9E /* GestureAnimation */;
+			target = 4AD9F26B18BE6F9A0019EC9E /* advancedAnimation */;
 			targetProxy = 4AD9F28C18BE6F9A0019EC9E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -400,9 +402,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GestureAnimation/GestureAnimation-Prefix.pch";
-				INFOPLIST_FILE = "GestureAnimation/GestureAnimation-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "GestureAnimation/advancedAnimation-Prefix.pch";
+				INFOPLIST_FILE = "GestureAnimation/advancedAnimation-Info.plist";
+				PRODUCT_NAME = advancedAnimation;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -413,9 +415,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GestureAnimation/GestureAnimation-Prefix.pch";
-				INFOPLIST_FILE = "GestureAnimation/GestureAnimation-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "GestureAnimation/advancedAnimation-Prefix.pch";
+				INFOPLIST_FILE = "GestureAnimation/advancedAnimation-Info.plist";
+				PRODUCT_NAME = advancedAnimation;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -436,8 +438,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "GestureAnimationTests/GestureAnimationTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "GestureAnimationTests/advancedAnimationTests-Info.plist";
+				PRODUCT_NAME = advancedAnimationTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -455,8 +457,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GestureAnimation/GestureAnimation-Prefix.pch";
-				INFOPLIST_FILE = "GestureAnimationTests/GestureAnimationTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "GestureAnimationTests/advancedAnimationTests-Info.plist";
+				PRODUCT_NAME = advancedAnimationTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -465,7 +467,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4AD9F26718BE6F9A0019EC9E /* Build configuration list for PBXProject "GestureAnimation" */ = {
+		4AD9F26718BE6F9A0019EC9E /* Build configuration list for PBXProject "advancedAnimation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4AD9F29618BE6F9A0019EC9E /* Debug */,
@@ -474,7 +476,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4AD9F29818BE6F9A0019EC9E /* Build configuration list for PBXNativeTarget "GestureAnimation" */ = {
+		4AD9F29818BE6F9A0019EC9E /* Build configuration list for PBXNativeTarget "advancedAnimation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4AD9F29918BE6F9A0019EC9E /* Debug */,
@@ -483,7 +485,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4AD9F29B18BE6F9A0019EC9E /* Build configuration list for PBXNativeTarget "GestureAnimationTests" */ = {
+		4AD9F29B18BE6F9A0019EC9E /* Build configuration list for PBXNativeTarget "advancedAnimationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4AD9F29C18BE6F9A0019EC9E /* Debug */,
