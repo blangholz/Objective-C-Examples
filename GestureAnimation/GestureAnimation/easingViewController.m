@@ -74,8 +74,6 @@
     animateButton.backgroundColor = UIColorFromRGB(0xececec);
     [self.view addSubview:animateButton];
     
-    
-    
     self.startFrameRed = self.redSquare.frame;
     self.startFrameBlue = self.blueSquare.frame;
     self.startFrameGreen = self.greenSquare.frame;
@@ -94,7 +92,7 @@
     
     float duration = 1;
     
-    [UIView animateWithDuration:duration delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+    [UIView animateWithDuration:duration delay:0 options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionBeginFromCurrentState animations:^{
         CGRect endFrame;
         if (self.isForward) {
             endFrame = self.redSquare.frame;
@@ -111,7 +109,7 @@
 //        self.redSquare.frame = endFrame;
 //    } completion:nil];
 
-    [UIView animateWithDuration:duration delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:duration delay:0 options:UIViewAnimationOptionCurveEaseOut | UIViewAnimationOptionBeginFromCurrentState animations:^{
         CGRect endFrame;
         if (self.isForward) {
             endFrame = self.blueSquare.frame;
@@ -122,7 +120,7 @@
         self.blueSquare.frame = endFrame;
     } completion:nil];
     
-    [UIView animateWithDuration:duration delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:duration delay:0 options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionBeginFromCurrentState animations:^{
         CGRect endFrame;
         if (self.isForward) {
             endFrame = self.greenSquare.frame;
@@ -133,7 +131,7 @@
         self.greenSquare.frame = endFrame;
     } completion:nil];
     
-    [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:.8 initialSpringVelocity:10 options:0 animations:^{
+    [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:.8 initialSpringVelocity:10 options: UIViewAnimationOptionBeginFromCurrentState animations:^{
         CGRect endFrame;
         if (self.isForward) {
             endFrame = self.yellowSquare.frame;

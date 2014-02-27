@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #include "easingViewController.h"
 #include "scaleAndRotateViewController.h"
+#include "doubleTapViewController.h"
 
 @implementation AppDelegate
 
@@ -26,7 +27,11 @@
     UINavigationController *scaleAndRotateNavigationController = [[UINavigationController alloc] initWithRootViewController:scaleAndRotateView];
     scaleAndRotateView.tabBarItem.image = [UIImage imageNamed:@"..."];
     
-    tabBarController.viewControllers = @[easingNavigationController, scaleAndRotateNavigationController];
+    doubleTapViewController *doubleTapView = [[doubleTapViewController alloc] init];
+    UINavigationController *doubleTapNavigationController = [[UINavigationController alloc] initWithRootViewController:doubleTapView];
+    doubleTapNavigationController.tabBarItem.image = [UIImage imageNamed:@"..."];
+    
+    tabBarController.viewControllers = @[easingNavigationController, scaleAndRotateNavigationController, doubleTapNavigationController];
     
     self.window.rootViewController = tabBarController;
     

@@ -11,6 +11,7 @@
 
 @interface scaleAndRotateViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *likeButton;
+@property (weak, nonatomic) IBOutlet UIImageView *interfaceBuilderLike;
 
 @end
 
@@ -30,12 +31,12 @@
     [super viewDidLoad];
     
     UIImage *likeThumb = [UIImage imageNamed:@"likeThumb"];
-    UIImageView *likeButton = [[UIImageView alloc] initWithImage:likeThumb];
-    likeButton.backgroundColor = [UIColor blackColor];
-    [likeButton setFrame:CGRectMake(100, 200, 0, 0)];
-    [likeButton sizeToFit];
-    likeButton.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:likeButton];
+    self.likeButton = [[UIImageView alloc] initWithImage:likeThumb];
+    self.likeButton.backgroundColor = [UIColor blackColor];
+    [self.likeButton setFrame:CGRectMake(100, 200, 0, 0)];
+    [self.likeButton sizeToFit];
+    self.likeButton.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:self.likeButton];
     
     UIButton *animateButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [animateButton addTarget:self action:@selector(animateButtonUp:) forControlEvents:UIControlEventTouchUpInside];
@@ -62,10 +63,12 @@
 -(IBAction)animateButtonUp:(id)sender {
     NSLog(@"Animate button Tapped!");
     CGAffineTransform transform = CGAffineTransformMakeScale(0,0);
+    CGAffineTransformRotate(self.likeButton.transform, M_PI_2);
     self.likeButton.transform = transform;
     
     [UIView animateWithDuration:1 animations:^{
         CGAffineTransform transform = CGAffineTransformMakeScale(1,1);
+        CGAffineTransformRotate(self.likeButton.transform, M_PI_4);
         self.likeButton.transform = transform;
     } completion:nil];
 }
