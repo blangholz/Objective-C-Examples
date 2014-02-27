@@ -25,6 +25,8 @@
 		4AD9F2A718BE71B00019EC9E /* easingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AD9F2A518BE71B00019EC9E /* easingViewController.xib */; };
 		4AD9F2AB18BEDCDA0019EC9E /* scaleAndRotateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9F2A918BEDCDA0019EC9E /* scaleAndRotateViewController.m */; };
 		4AD9F2AC18BEDCDA0019EC9E /* scaleAndRotateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AD9F2AA18BEDCDA0019EC9E /* scaleAndRotateViewController.xib */; };
+		4AE511C618BFE597006EE824 /* nodesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE511C418BFE597006EE824 /* nodesViewController.m */; };
+		4AE511C718BFE597006EE824 /* nodesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AE511C518BFE597006EE824 /* nodesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,9 @@
 		4AD9F2A818BEDCDA0019EC9E /* scaleAndRotateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scaleAndRotateViewController.h; sourceTree = "<group>"; };
 		4AD9F2A918BEDCDA0019EC9E /* scaleAndRotateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = scaleAndRotateViewController.m; sourceTree = "<group>"; };
 		4AD9F2AA18BEDCDA0019EC9E /* scaleAndRotateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = scaleAndRotateViewController.xib; sourceTree = "<group>"; };
+		4AE511C318BFE597006EE824 /* nodesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nodesViewController.h; sourceTree = "<group>"; };
+		4AE511C418BFE597006EE824 /* nodesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nodesViewController.m; sourceTree = "<group>"; };
+		4AE511C518BFE597006EE824 /* nodesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = nodesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +179,9 @@
 				4A36423E18BFAE72009D6CDF /* doubleTapViewController.h */,
 				4A36423F18BFAE72009D6CDF /* doubleTapViewController.m */,
 				4A36424018BFAE72009D6CDF /* doubleTapViewController.xib */,
+				4AE511C318BFE597006EE824 /* nodesViewController.h */,
+				4AE511C418BFE597006EE824 /* nodesViewController.m */,
+				4AE511C518BFE597006EE824 /* nodesViewController.xib */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -253,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AE511C718BFE597006EE824 /* nodesViewController.xib in Resources */,
 				4AD9F2AC18BEDCDA0019EC9E /* scaleAndRotateViewController.xib in Resources */,
 				4AD9F27A18BE6F9A0019EC9E /* InfoPlist.strings in Resources */,
 				4AD9F28218BE6F9A0019EC9E /* Images.xcassets in Resources */,
@@ -276,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AE511C618BFE597006EE824 /* nodesViewController.m in Sources */,
 				4AD9F28018BE6F9A0019EC9E /* AppDelegate.m in Sources */,
 				4AD9F27C18BE6F9A0019EC9E /* main.m in Sources */,
 				4AD9F2AB18BEDCDA0019EC9E /* scaleAndRotateViewController.m in Sources */,
