@@ -48,10 +48,11 @@
     animateButton.frame = CGRectMake(320/2-width/2, 1136/2-120, width, animateButton.frame.size.height+10);
     animateButton.backgroundColor = UIColorFromRGB(0xececec);
     [self.view addSubview:animateButton];
-    
-    CGAffineTransform transform = CGAffineTransformMakeScale(0,0);
-    self.likeButton.transform = transform;
-    
+//    
+//    CGAffineTransform transform = CGAffineTransformMakeScale(0,0);
+//    self.likeButton.transform = transform;
+    self.likeButton.transform = CGAffineTransformMakeScale(.1, .1);
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,15 +63,19 @@
 
 -(IBAction)animateButtonUp:(id)sender {
     NSLog(@"Animate button Tapped!");
-    CGAffineTransform transform = CGAffineTransformMakeScale(0,0);
-    CGAffineTransformRotate(self.likeButton.transform, M_PI_2);
-    self.likeButton.transform = transform;
+//    CGAffineTransform transform = CGAffineTransformMakeScale(0,0);
+//    self.likeButton.transform = transform;
+    self.likeButton.transform = CGAffineTransformMakeRotation(M_PI_2);
+    self.likeButton.transform = CGAffineTransformMakeScale(.1, .1);
     
     [UIView animateWithDuration:1 animations:^{
-        CGAffineTransform transform = CGAffineTransformMakeScale(1,1);
-        CGAffineTransformRotate(self.likeButton.transform, M_PI_4);
-        self.likeButton.transform = transform;
+
+        self.likeButton.transform = CGAffineTransformMakeRotation(M_PI_4);
+        self.likeButton.transform = CGAffineTransformMakeScale(1, 1);
+
     } completion:nil];
+    
+    
 }
 
 @end

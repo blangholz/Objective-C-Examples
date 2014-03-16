@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4A1D1B5C18AAC1810042281D"
-               BuildableName = "basicAnimationDemo.app"
-               BlueprintName = "basicAnimationDemo"
-               ReferencedContainer = "container:basicAnimationDemo.xcodeproj">
+               BlueprintIdentifier = "4AF0EE9818CF67D30044964F"
+               BuildableName = "UIDynamics.app"
+               BlueprintName = "UIDynamics"
+               ReferencedContainer = "container:UIDynamics.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4A1D1B7718AAC1810042281D"
-               BuildableName = "basicAnimationDemoTests.xctest"
-               BlueprintName = "basicAnimationDemoTests"
-               ReferencedContainer = "container:basicAnimationDemo.xcodeproj">
+               BlueprintIdentifier = "4AF0EEB318CF67D30044964F"
+               BuildableName = "UIDynamicsTests.xctest"
+               BlueprintName = "UIDynamicsTests"
+               ReferencedContainer = "container:UIDynamics.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4A1D1B5C18AAC1810042281D"
-            BuildableName = "basicAnimationDemo.app"
-            BlueprintName = "basicAnimationDemo"
-            ReferencedContainer = "container:basicAnimationDemo.xcodeproj">
+            BlueprintIdentifier = "4AF0EE9818CF67D30044964F"
+            BuildableName = "UIDynamics.app"
+            BlueprintName = "UIDynamics"
+            ReferencedContainer = "container:UIDynamics.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -61,10 +61,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4A1D1B5C18AAC1810042281D"
-            BuildableName = "basicAnimationDemo.app"
-            BlueprintName = "basicAnimationDemo"
-            ReferencedContainer = "container:basicAnimationDemo.xcodeproj">
+            BlueprintIdentifier = "4AF0EE9818CF67D30044964F"
+            BuildableName = "UIDynamics.app"
+            BlueprintName = "UIDynamics"
+            ReferencedContainer = "container:UIDynamics.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -79,10 +79,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4A1D1B5C18AAC1810042281D"
-            BuildableName = "basicAnimationDemo.app"
-            BlueprintName = "basicAnimationDemo"
-            ReferencedContainer = "container:basicAnimationDemo.xcodeproj">
+            BlueprintIdentifier = "4AF0EE9818CF67D30044964F"
+            BuildableName = "UIDynamics.app"
+            BlueprintName = "UIDynamics"
+            ReferencedContainer = "container:UIDynamics.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
