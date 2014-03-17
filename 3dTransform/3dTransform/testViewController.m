@@ -7,8 +7,11 @@
 //
 
 #import "testViewController.h"
+#import "mainViewController.h"
 
 @interface testViewController ()
+@property (nonatomic, strong) UIButton *backButton;
+
 
 @end
 
@@ -18,7 +21,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -27,6 +29,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.backButton = [[UIButton alloc] initWithFrame:CGRectMake(100, 200, 200, 200)];
 }
 
 - (void)didReceiveMemoryWarning

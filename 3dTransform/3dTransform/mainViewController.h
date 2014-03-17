@@ -10,4 +10,6 @@
 
 @interface mainViewController : UIViewController
 
+- (void)onTapGesture:(UITapGestureRecognizer *)tapGestureRecognizer;
+
 @end

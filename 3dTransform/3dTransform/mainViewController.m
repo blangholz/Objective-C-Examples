@@ -7,12 +7,15 @@
 //
 
 #import "mainViewController.h"
+#import "testViewController.h"
 
 @interface mainViewController ()
 @property (nonatomic, strong) UIScrollView *cardHolder;
 @property (nonatomic, strong) UIView *card;
+@property (nonatomic, assign) BOOL isForward;
+@property (nonatomic, assign) NSUInteger *cardIndex;
+@property (nonatomic, assign) CGPoint ogPos;
 
-- (void)onTapGesture:(UITapGestureRecognizer *)tapGestureRecognizer;
 
 
 @end
@@ -32,6 +35,8 @@
 {
     [super viewDidLoad];
     
+    self.isForward = NO;
+    
     self.cardHolder = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.cardHolder];
     
@@ -41,7 +46,7 @@
     //How do I set this based on requestTab height??
     self.cardHolder.contentSize=CGSizeMake(320,2000);
     
-    NSArray *imageArray = [[NSArray alloc] initWithObjects:@"loboLarge",@"gochLarge",@"misoLarge",@"tugOfWar",@"ears",@"onABridge",@"overTheHill", nil];
+    NSMutableArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"loboLarge",@"gochLarge",@"misoLarge",@"tugOfWar",@"ears",@"onABridge",@"overTheHill", nil];
     
     NSLog(@"count %lu", (unsigned long)imageArray.count);
     
@@ -56,6 +61,10 @@
         UIImageView *cardImage = [[UIImageView alloc] initWithImage:image];
         cardImage.frame = CGRectMake(0, 0, 320, 1136/2);
         [self.card addSubview:cardImage];
+        
+//        self.cardIndex = idx;
+//        NSUInteger *cardIndex2 = idx;
+
         
         CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
         rotationAndPerspectiveTransform.m34 = 1.0 / -800.0;
@@ -92,21 +101,44 @@
     UIView *tappedView = tapGestureRecognizer.view;
     
     self.cardHolder.scrollEnabled = NO;
-
-    NSLog(@"tap");
     
-    CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
-    rotationAndPerspectiveTransform.m34 = 1.0 / -800.0;
-    rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, 0, 1.0f, 0.0f, 0.0f);
 
-    [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        tappedView.layer.anchorPoint = CGPointMake(.5, 0);
-        tappedView.layer.transform = rotationAndPerspectiveTransform;
-        tappedView.layer.position = CGPointMake(320/2, 0);
-    } completion:^(BOOL finished) {
-        //
-    }];
+//    NSLog(@"tap %ui", self.cardIndex);
     
+
+    if (self.isForward) {
+        CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
+        rotationAndPerspectiveTransform.m34 = 1.0 / -800.0;
+        rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, (-M_PI_2 * 0.6), 1.0f, 0.0f, 0.0f);
+        
+        [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            tappedView.layer.anchorPoint = CGPointMake(.5, 0);
+            tappedView.layer.transform = rotationAndPerspectiveTransform;
+            tappedView.layer.position = self.ogPos;
+        } completion:^(BOOL finished) {
+            self.cardHolder.scrollEnabled = YES;
+        }];
+    } else {
+        //set point card is coming from
+        self.ogPos = tappedView.layer.position;
+        
+        CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
+        rotationAndPerspectiveTransform.m34 = 1.0 / -800.0;
+        rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, 0, 1.0f, 0.0f, 0.0f);
+        
+        [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            tappedView.layer.anchorPoint = CGPointMake(.5, 0);
+            tappedView.layer.transform = rotationAndPerspectiveTransform;
+            tappedView.layer.position = CGPointMake(320/2, 0);
+        } completion:^(BOOL finished) {
+//            UIViewController *vc = [[testViewController alloc] init];
+//            vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve; // Fade
+//            [self presentViewController:vc animated:NO completion:nil];
+        }];
+    }
+    
+
+    self.isForward = !self.isForward;
 //    [UIView animateWithDuration:1 animations:^{
 //        view.frame = CGRectMake(1000, view.frame.origin.y, view.frame.size.width, view.frame.size.height);
 //    }];
