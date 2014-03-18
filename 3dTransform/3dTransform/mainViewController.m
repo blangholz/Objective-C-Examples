@@ -15,6 +15,7 @@
 @property (nonatomic, assign) BOOL isForward;
 @property (nonatomic, assign) NSUInteger *cardIndex;
 @property (nonatomic, assign) CGPoint ogPos;
+@property (nonatomic, strong) NSMutableArray *imageViewsArray;
 
 
 
@@ -48,6 +49,7 @@
     
     NSMutableArray *imageNameArray = [[NSMutableArray alloc] initWithObjects:@"loboLarge",@"gochLarge",@"misoLarge",@"tugOfWar",@"ears",@"onABridge",@"overTheHill", nil];
     
+    self.imageViewsArray = [[NSMutableArray alloc]init];
     
     NSLog(@"count %lu", (unsigned long)imageNameArray.count);
     
@@ -55,6 +57,8 @@
         
         self.card = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 1136/2)];
         [self.cardHolder addSubview: self.card];
+        
+        [self.imageViewsArray addObject:self.card];
         
         self.card.frame = CGRectMake(0, 50*idx, 320, 1136/2);
         
@@ -84,8 +88,8 @@
         
         [self.card addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapGesture:)]];
     }];
-
-
+    
+    NSLog(@"array %@",self.imageViewsArray);
 }
 
 - (void)didReceiveMemoryWarning
