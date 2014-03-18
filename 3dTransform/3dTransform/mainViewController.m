@@ -46,11 +46,12 @@
     //How do I set this based on requestTab height??
     self.cardHolder.contentSize=CGSizeMake(320,2000);
     
-    NSMutableArray *imageArray = [[NSMutableArray alloc] initWithObjects:@"loboLarge",@"gochLarge",@"misoLarge",@"tugOfWar",@"ears",@"onABridge",@"overTheHill", nil];
+    NSMutableArray *imageNameArray = [[NSMutableArray alloc] initWithObjects:@"loboLarge",@"gochLarge",@"misoLarge",@"tugOfWar",@"ears",@"onABridge",@"overTheHill", nil];
     
-    NSLog(@"count %lu", (unsigned long)imageArray.count);
     
-    [imageArray enumerateObjectsUsingBlock:^(NSString *imageName, NSUInteger idx, BOOL *stop) {
+    NSLog(@"count %lu", (unsigned long)imageNameArray.count);
+    
+    [imageNameArray enumerateObjectsUsingBlock:^(NSString *imageName, NSUInteger idx, BOOL *stop) {
         
         self.card = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 1136/2)];
         [self.cardHolder addSubview: self.card];
@@ -101,7 +102,6 @@
     UIView *tappedView = tapGestureRecognizer.view;
     
     self.cardHolder.scrollEnabled = NO;
-    
 
 //    NSLog(@"tap %ui", self.cardIndex);
     
@@ -111,7 +111,7 @@
         rotationAndPerspectiveTransform.m34 = 1.0 / -800.0;
         rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, (-M_PI_2 * 0.6), 1.0f, 0.0f, 0.0f);
         
-        [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [UIView animateWithDuration:.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             tappedView.layer.anchorPoint = CGPointMake(.5, 0);
             tappedView.layer.transform = rotationAndPerspectiveTransform;
             tappedView.layer.position = self.ogPos;
@@ -126,7 +126,7 @@
         rotationAndPerspectiveTransform.m34 = 1.0 / -800.0;
         rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, 0, 1.0f, 0.0f, 0.0f);
         
-        [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [UIView animateWithDuration:.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             tappedView.layer.anchorPoint = CGPointMake(.5, 0);
             tappedView.layer.transform = rotationAndPerspectiveTransform;
             tappedView.layer.position = CGPointMake(320/2, 0);
