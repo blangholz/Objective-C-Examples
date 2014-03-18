@@ -17,6 +17,7 @@
 @property (nonatomic, assign) CGPoint ogPos;
 @property (nonatomic, strong) NSMutableArray *imageViewsArray;
 @property (nonatomic, assign) float scrollOffset;
+@property (nonatomic, assign) int *imageViewArrayCount;
 
 
 
@@ -42,19 +43,20 @@
     self.cardHolder = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.cardHolder];
     [self.cardHolder setDelegate:self];
-    NSLog(@"Scroll %@",NSStringFromCGPoint(self.cardHolder.contentOffset));
+//    NSLog(@"Scroll %@",NSStringFromCGPoint(self.cardHolder.contentOffset));
 
     
     self.cardHolder.clipsToBounds = NO;
     self.cardHolder.scrollEnabled = NO;
     
     //How do I set this based on requestTab height??
-    self.cardHolder.contentSize=CGSizeMake(320,2000);
     
-    NSMutableArray *imageNameArray = [[NSMutableArray alloc] initWithObjects:@"loboLarge",@"gochLarge",@"misoLarge",@"tugOfWar",@"ears",@"onABridge",@"overTheHill", nil];
+    self.cardHolder.contentSize=CGSizeMake(320,2000);
     
     self.imageViewsArray = [[NSMutableArray alloc]init];
     
+    NSMutableArray *imageNameArray = [[NSMutableArray alloc] initWithObjects:@"loboLarge",@"gochLarge",@"misoLarge",@"tugOfWar",@"ears",@"onABridge",@"overTheHill", nil];
+
     NSLog(@"count %lu", (unsigned long)imageNameArray.count);
     
     [imageNameArray enumerateObjectsUsingBlock:^(NSString *imageName, NSUInteger idx, BOOL *stop) {
@@ -93,7 +95,12 @@
         [self.card addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapGesture:)]];
     }];
     
-    NSLog(@"array %@",self.imageViewsArray);
+//    NSLog(@"array %@",self.imageViewsArray);
+    
+    self.imageViewArrayCount = self.imageViewsArray.count;
+    
+    NSLog(@"Image View Array Count %i",self.imageViewArrayCount);
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -105,32 +112,37 @@
 #pragma mark - Private methods
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-//    NSLog(@"scroll %@",NSStringFromCGPoint(scrollView.contentOffset));
     
+//  Figure out scroll offset
     self.scrollOffset = scrollView.contentOffset.y;
-    
-    NSLog(@"scroll %f",self.scrollOffset);
-
+//    NSLog(@"scroll %f",self.scrollOffset);
 
 }
 
-
 - (void)onTapGesture:(UITapGestureRecognizer *)tapGestureRecognizer {
     CGPoint point = [tapGestureRecognizer locationInView:self.view];
+    
     //Get the view I tapped on
     UIView *tappedView = tapGestureRecognizer.view;
     
     self.cardHolder.scrollEnabled = NO;
 
-//    NSLog(@"tap %ui", self.cardIndex);
-    
+//    self.imageViewArrayCount
+    for (int i = 0; i < 2; i++){
+        UIView *cardView = [self.imageViewsArray objectAtIndex:i];
+        NSLog (@"Element %i = %@", i, [self.imageViewsArray objectAtIndex: i]);
+        [UIView animateWithDuration:.5 animations:^{
+            cardView.layer.position = CGPointMake(320/2, -100);
+        }];
+    };
 
+    
     if (self.isForward) {
         CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
         rotationAndPerspectiveTransform.m34 = 1.0 / -800.0;
         rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, (-M_PI_2 * 0.6), 1.0f, 0.0f, 0.0f);
         
-        [UIView animateWithDuration:.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             tappedView.layer.anchorPoint = CGPointMake(.5, 0);
             tappedView.layer.transform = rotationAndPerspectiveTransform;
             tappedView.layer.position = self.ogPos;
@@ -145,7 +157,7 @@
         rotationAndPerspectiveTransform.m34 = 1.0 / -800.0;
         rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, 0, 1.0f, 0.0f, 0.0f);
         
-        [UIView animateWithDuration:.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             tappedView.layer.anchorPoint = CGPointMake(.5, 0);
             tappedView.layer.transform = rotationAndPerspectiveTransform;
             tappedView.layer.position = CGPointMake(320/2, (0+self.scrollOffset));
