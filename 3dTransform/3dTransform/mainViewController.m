@@ -124,18 +124,12 @@
     
     //Get the view I tapped on
     UIView *tappedView = tapGestureRecognizer.view;
+    //Get the index of the tappedView
+    int tappedViewIndex = [self.imageViewsArray indexOfObject:tappedView];
+    
+    NSLog(@"tappedView index %d", tappedViewIndex);
     
     self.cardHolder.scrollEnabled = NO;
-
-//    self.imageViewArrayCount
-    for (int i = 0; i < 2; i++){
-        UIView *cardView = [self.imageViewsArray objectAtIndex:i];
-        NSLog (@"Element %i = %@", i, [self.imageViewsArray objectAtIndex: i]);
-        [UIView animateWithDuration:.5 animations:^{
-            cardView.layer.position = CGPointMake(320/2, -100);
-        }];
-    };
-
     
     if (self.isForward) {
         CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
@@ -149,6 +143,14 @@
         } completion:^(BOOL finished) {
             self.cardHolder.scrollEnabled = YES;
         }];
+        
+        for (int i = 0 ; i < self.imageViewArrayCount; i++) {
+            UIView *cardView = [self.imageViewsArray objectAtIndex:i];
+            [UIView animateWithDuration:.5 animations:^{
+                cardView.layer.position = CGPointMake(320/2, 80*(i+0));
+            }];
+        };
+        
     } else {
         //set point card is coming from
         self.ogPos = tappedView.layer.position;
@@ -166,6 +168,28 @@
 //            vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve; // Fade
 //            [self presentViewController:vc animated:NO completion:nil];
         }];
+        
+//        for (int i = 0 ; i < tappedViewIndex; i++) {
+//            UIView *cardView = [self.imageViewsArray objectAtIndex:i];
+//            [UIView animateWithDuration:.5 animations:^{
+//                cardView.layer.position = CGPointMake(320/2, -300);
+//            }];
+//        };
+
+        for (int i = 0 ; i < self.imageViewArrayCount; i++) {
+            UIView *cardView = [self.imageViewsArray objectAtIndex:i];
+            if (i < tappedViewIndex) {
+                [UIView animateWithDuration:.5 animations:^{
+                    cardView.layer.position = CGPointMake(320/2, -300);
+                }];
+            } else if ( i > tappedViewIndex) {
+                [UIView animateWithDuration:.5 animations:^{
+                    cardView.layer.position = CGPointMake(320/2, 1136/2);
+                }];
+            }
+
+        };
+        
     }
     
 
