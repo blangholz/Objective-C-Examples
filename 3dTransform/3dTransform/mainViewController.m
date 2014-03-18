@@ -16,6 +16,7 @@
 @property (nonatomic, assign) NSUInteger *cardIndex;
 @property (nonatomic, assign) CGPoint ogPos;
 @property (nonatomic, strong) NSMutableArray *imageViewsArray;
+@property (nonatomic, assign) float scrollOffset;
 
 
 
@@ -40,6 +41,9 @@
     
     self.cardHolder = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.cardHolder];
+    [self.cardHolder setDelegate:self];
+    NSLog(@"Scroll %@",NSStringFromCGPoint(self.cardHolder.contentOffset));
+
     
     self.cardHolder.clipsToBounds = NO;
     self.cardHolder.scrollEnabled = NO;
@@ -100,6 +104,17 @@
 
 #pragma mark - Private methods
 
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//    NSLog(@"scroll %@",NSStringFromCGPoint(scrollView.contentOffset));
+    
+    self.scrollOffset = scrollView.contentOffset.y;
+    
+    NSLog(@"scroll %f",self.scrollOffset);
+
+
+}
+
+
 - (void)onTapGesture:(UITapGestureRecognizer *)tapGestureRecognizer {
     CGPoint point = [tapGestureRecognizer locationInView:self.view];
     //Get the view I tapped on
@@ -133,7 +148,7 @@
         [UIView animateWithDuration:.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             tappedView.layer.anchorPoint = CGPointMake(.5, 0);
             tappedView.layer.transform = rotationAndPerspectiveTransform;
-            tappedView.layer.position = CGPointMake(320/2, 0);
+            tappedView.layer.position = CGPointMake(320/2, (0+self.scrollOffset));
         } completion:^(BOOL finished) {
 //            UIViewController *vc = [[testViewController alloc] init];
 //            vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve; // Fade
