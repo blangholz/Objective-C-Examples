@@ -122,6 +122,8 @@
 - (void)onTapGesture:(UITapGestureRecognizer *)tapGestureRecognizer {
     CGPoint point = [tapGestureRecognizer locationInView:self.view];
     
+    float durration = .5;
+    
     //Get the view I tapped on
     UIView *tappedView = tapGestureRecognizer.view;
     //Get the index of the tappedView
@@ -136,7 +138,7 @@
         rotationAndPerspectiveTransform.m34 = 1.0 / -800.0;
         rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, (-M_PI_2 * 0.6), 1.0f, 0.0f, 0.0f);
         
-        [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [UIView animateWithDuration:durration delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             tappedView.layer.anchorPoint = CGPointMake(.5, 0);
             tappedView.layer.transform = rotationAndPerspectiveTransform;
             tappedView.layer.position = self.ogPos;
@@ -145,10 +147,21 @@
         }];
         
         for (int i = 0 ; i < self.imageViewArrayCount; i++) {
+            
             UIView *cardView = [self.imageViewsArray objectAtIndex:i];
-            [UIView animateWithDuration:.5 animations:^{
+            
+            CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
+            rotationAndPerspectiveTransform.m34 = 1.0 / -800.0;
+            rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, -M_PI_2 * 0.6, 1.0f, 0.0f, 0.0f);
+            
+            [UIView animateWithDuration:durration delay:0 options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseOut animations:^{
+                cardView.layer.anchorPoint = CGPointMake(.5, 0);
+                cardView.layer.transform = rotationAndPerspectiveTransform;
                 cardView.layer.position = CGPointMake(320/2, 80*(i+0));
+            } completion:^(BOOL finished) {
+                //
             }];
+            
         };
         
     } else {
@@ -159,33 +172,41 @@
         rotationAndPerspectiveTransform.m34 = 1.0 / -800.0;
         rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, 0, 1.0f, 0.0f, 0.0f);
         
-        [UIView animateWithDuration:2 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [UIView animateWithDuration:durration delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             tappedView.layer.anchorPoint = CGPointMake(.5, 0);
             tappedView.layer.transform = rotationAndPerspectiveTransform;
             tappedView.layer.position = CGPointMake(320/2, (0+self.scrollOffset));
         } completion:^(BOOL finished) {
+//      when card focused swap with view controller
 //            UIViewController *vc = [[testViewController alloc] init];
 //            vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve; // Fade
 //            [self presentViewController:vc animated:NO completion:nil];
         }];
         
-//        for (int i = 0 ; i < tappedViewIndex; i++) {
-//            UIView *cardView = [self.imageViewsArray objectAtIndex:i];
-//            [UIView animateWithDuration:.5 animations:^{
-//                cardView.layer.position = CGPointMake(320/2, -300);
-//            }];
-//        };
 
+        //Move cars above and below tappedCard
         for (int i = 0 ; i < self.imageViewArrayCount; i++) {
             UIView *cardView = [self.imageViewsArray objectAtIndex:i];
+            
+            CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
+            rotationAndPerspectiveTransform.m34 = 1.0 / -800.0;
+            rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, -M_PI_2, 1.0f, 0.0f, 0.0f);
+            
             if (i < tappedViewIndex) {
-                [UIView animateWithDuration:.5 animations:^{
-                    cardView.layer.position = CGPointMake(320/2, -300);
+                [UIView animateWithDuration:durration delay:0 options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseInOut animations:^{
+                    cardView.layer.anchorPoint = CGPointMake(.5, 0);
+                    cardView.layer.transform = rotationAndPerspectiveTransform;
+                    cardView.layer.position = CGPointMake(320/2, - 80 - (26*(i+0)) +self.scrollOffset);
+                } completion:^(BOOL finished) {
+                    //
                 }];
             } else if ( i > tappedViewIndex) {
-                [UIView animateWithDuration:.5 animations:^{
-                    cardView.layer.position = CGPointMake(320/2, 1136/2);
+                [UIView animateWithDuration:durration delay:0 options:UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseInOut animations:^{
+                    cardView.layer.position = CGPointMake(320/2, 1136/2 + (26*(i+0)) + self.scrollOffset);
+                } completion:^(BOOL finished) {
+                    //
                 }];
+                
             }
 
         };
