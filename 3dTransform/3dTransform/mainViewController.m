@@ -111,13 +111,74 @@
 
 #pragma mark - Private methods
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
 //  Figure out scroll offset
     self.scrollOffset = scrollView.contentOffset.y;
-//    NSLog(@"scroll %f",self.scrollOffset);
+    NSLog(@"scroll %f",self.scrollOffset);
+    
+    float scrollUpModifyer = 1 + (self.scrollOffset-(-100))/(0-(-100))*(0-1);
+    
+    for (int i = 0 ; i < self.imageViewArrayCount; i++) {
 
+        UIView *cardView = [self.imageViewsArray objectAtIndex:i];
+
+        if (self.scrollOffset < 0 ) {
+//            NSLog(@"negitive scroll!");
+            
+            CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
+            rotationAndPerspectiveTransform.m34 = 1.0 / -800.0;
+            rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, (-M_PI_2 * (0.6 + scrollUpModifyer*.05)), 1.0f, 0.0f, 0.0f);
+            
+            [UIView animateWithDuration:.1 delay:0 options: UIViewAnimationOptionCurveEaseInOut animations:^{
+                cardView.layer.transform = rotationAndPerspectiveTransform;
+                cardView.layer.position = CGPointMake(320/2, (80-(scrollUpModifyer*10))*(i+0));
+            } completion:^(BOOL finished) {
+                //
+            }];
+        }
+
+        float scrollDownModifyer = 0 + (self.scrollOffset-204)/(304-204)*(1-0);
+
+//        NSLog(@"content height %f",self.cardHolder.contentSize.height);
+//        NSLog(@"scroll down %f",scrollDownModifyer);
+        
+        if (self.scrollOffset < self.cardHolder.contentSize.height ) {
+            
+            CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
+            rotationAndPerspectiveTransform.m34 = 1.0 / -800.0;
+            rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, (-M_PI_2 * (0.6 - scrollDownModifyer*.05)), 1.0f, 0.0f, 0.0f);
+            
+            [UIView animateWithDuration:.1 delay:0 options: UIViewAnimationOptionCurveEaseInOut animations:^{
+//                cardView.layer.transform = rotationAndPerspectiveTransform;
+//                cardView.layer.position = CGPointMake(320/2, (80+(scrollDownModifyer*10))*(i+0));
+            } completion:^(BOOL finished) {
+                //
+            }];
+        }
+
+    }
 }
+
+//- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
+//    NSLog(@"Scroll end");
+//    
+//    for (int i = 0 ; i < self.imageViewArrayCount; i++) {
+//        
+//        UIView *cardView = [self.imageViewsArray objectAtIndex:i];
+//        
+//        CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
+//        rotationAndPerspectiveTransform.m34 = 1.0 / -800.0;
+//        rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, (-M_PI_2 * (0.6)), 1.0f, 0.0f, 0.0f);
+//        
+//        [UIView animateWithDuration:.2 delay:0 options: UIViewAnimationOptionCurveEaseInOut animations:^{
+//            cardView.layer.transform = rotationAndPerspectiveTransform;
+//        } completion:^(BOOL finished) {
+//            //
+//        }];
+//        
+//    }
+//}
 
 - (void)onTapGesture:(UITapGestureRecognizer *)tapGestureRecognizer {
     CGPoint point = [tapGestureRecognizer locationInView:self.view];
