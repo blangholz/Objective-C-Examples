@@ -40,24 +40,24 @@
     
     self.isForward = NO;
     
+    self.imageViewsArray = [[NSMutableArray alloc]init];
+    
+    NSMutableArray *imageNameArray = [[NSMutableArray alloc] initWithObjects:@"loboLarge",@"gochLarge",@"misoLarge",@"tugOfWar",@"ears",@"onABridge",@"overTheHill",@"StopSleeping", nil];
+
+    NSLog(@"count %lu", (unsigned long)imageNameArray.count);
+    
     self.cardHolder = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.cardHolder];
     [self.cardHolder setDelegate:self];
-//    NSLog(@"Scroll %@",NSStringFromCGPoint(self.cardHolder.contentOffset));
-
+    //    NSLog(@"Scroll %@",NSStringFromCGPoint(self.cardHolder.contentOffset));
+    
     
     self.cardHolder.clipsToBounds = NO;
     self.cardHolder.scrollEnabled = NO;
     
     //How do I set this based on requestTab height??
     
-    self.cardHolder.contentSize=CGSizeMake(320,2000);
-    
-    self.imageViewsArray = [[NSMutableArray alloc]init];
-    
-    NSMutableArray *imageNameArray = [[NSMutableArray alloc] initWithObjects:@"loboLarge",@"gochLarge",@"misoLarge",@"tugOfWar",@"ears",@"onABridge",@"overTheHill", nil];
-
-    NSLog(@"count %lu", (unsigned long)imageNameArray.count);
+    self.cardHolder.contentSize=CGSizeMake(320,(160/2)*imageNameArray.count+(264/2));
     
     [imageNameArray enumerateObjectsUsingBlock:^(NSString *imageName, NSUInteger idx, BOOL *stop) {
         
