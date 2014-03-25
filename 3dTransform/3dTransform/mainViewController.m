@@ -37,12 +37,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+ 
+    self.view.backgroundColor = [UIColor blackColor];
     self.isForward = NO;
     
     self.imageViewsArray = [[NSMutableArray alloc]init];
     
-    NSMutableArray *imageNameArray = [[NSMutableArray alloc] initWithObjects:@"loboLarge",@"gochLarge",@"misoLarge",@"tugOfWar",@"ears",@"onABridge",@"overTheHill",@"StopSleeping", nil];
+    NSMutableArray *imageNameArray = [[NSMutableArray alloc] initWithObjects:@"loboLarge",@"gochLarge",@"misoLarge",@"tugOfWar",@"ears",@"onABridge",@"overTheHill",@"StopSleeping",@"misoSquint", nil];
 
     NSLog(@"count %lu", (unsigned long)imageNameArray.count);
     
